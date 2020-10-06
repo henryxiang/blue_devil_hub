@@ -1,10 +1,11 @@
-# blue_devil_hub
+# The Blue Devil Hub
 
-A new Flutter project.
+A Flutter project for The Blue Devil Hub newspaper.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a Flutter application to allow readers of The Blue Devil Hub
+to view the newspaper on their Android or iOS mobile devices.
 
 A few resources to get you started if this is your first Flutter project:
 
