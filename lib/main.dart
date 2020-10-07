@@ -29,6 +29,7 @@ class _WebExplorerState extends State<WebExplorer> {
         onWebViewCreated: (WebViewController webViewController) {
           _controller.complete(webViewController);
         },
+        javascriptMode: JavascriptMode.unrestricted,
       ),
       floatingActionButton: _bookmarkButton(),
     );
