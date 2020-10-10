@@ -13,12 +13,16 @@ class _WebExplorerState extends State<WebExplorer> {
   Completer<WebViewController> _controller = Completer<WebViewController>();
   final Set<String> _favorites = Set<String>();
 
+  Color hexToColor(String code) {
+    return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('The Blue Devil Hub'),
-        backgroundColor: Colors.indigo,
+        title: const Text('The Hub'),
+        backgroundColor: hexToColor('#2c3494'),
         actions: <Widget>[
           NavigationControls(_controller.future),
           Menu(_controller.future, () => _favorites),
@@ -50,6 +54,7 @@ class _WebExplorerState extends State<WebExplorer> {
               );
             },
             child: Icon(Icons.favorite),
+            backgroundColor: hexToColor('#2c3494'),
           );
         }
         return Container();
