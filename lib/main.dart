@@ -9,19 +9,23 @@ class WebExplorer extends StatefulWidget {
   _WebExplorerState createState() => _WebExplorerState();
 }
 
+Color hexToColor(String code) {
+  return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
+}
+
 class _WebExplorerState extends State<WebExplorer> {
   Completer<WebViewController> _controller = Completer<WebViewController>();
   final Set<String> _favorites = Set<String>();
 
-  Color hexToColor(String code) {
-    return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
-  }
+  // Color hexToColor(String code) {
+  //   return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('The Hub'),
+        title: const Text('THE HUB'),
         backgroundColor: hexToColor('#2c3494'),
         actions: <Widget>[
           NavigationControls(_controller.future),
@@ -105,7 +109,10 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Favorite pages')),
+      appBar: AppBar(
+        title: Text('Favorite pages'),
+        backgroundColor: hexToColor('#2c3494'),
+      ),
       body: ListView(
           children: favorites
               .map((url) => ListTile(
